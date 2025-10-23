@@ -1,0 +1,23 @@
+{% extends 'portfolio/base.html' %}
+{% block title %}Projects{% endblock %}
+{% block content %}
+<h1 class="mb-4">Projects</h1>
+
+<div class="row">
+  {% for project in projects %}
+  <div class="col-md-6 col-lg-4 mb-4">
+    <div class="card shadow-sm h-100">
+      <div class="card-body">
+        <h5 class="card-title">{{ project.title }}</h5>
+        <p class="card-text">{{ project.description|truncatechars:120 }}</p>
+        {% if project.link %}
+        <a href="{{ project.link }}" class="btn btn-outline-primary" target="_blank">View</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% empty %}
+  <p>No projects yet! Add one in the admin panel.</p>
+  {% endfor %}
+</div>
+{% endblock %}
