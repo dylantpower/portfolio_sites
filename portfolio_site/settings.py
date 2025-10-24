@@ -115,7 +115,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+import os
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+
+# ✅ This line is REQUIRED for deployment (Render, etc.)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# ✅ This lets Django find your static assets during dev
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'portfolio', 'static')]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
