@@ -116,7 +116,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 import os
-ALLOWED_HOSTS = ['dylan-portfolio-4ol7.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'dylan-portfolio-4ol7.onrender.com',
+    'www.dylanpower.me',
+    'dylanpower.me',
+    'localhost',
+    '127.0.0.1'
+]
+
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
